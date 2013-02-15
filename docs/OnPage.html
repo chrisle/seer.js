@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Namespace: OnPage</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/seerjs.css" rel="stylesheet">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+  </head>
+
+  <body onload="prettyPrint()">
+
+    
+
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="index.html">Seer SEO Toolbox</a>
+            <div class="nav-collapse">
+  <ul class="nav">
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#apis"> APIs <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <!-- <li><a href="#">Google Adwords</a></li> -->
+        <li><a href="GoogleAnalytics.html">Google Analytics</a></li>
+        <li><a href="Klout.html">Klout</a></li>
+        <li><a href="Majestic.html">Majestic</a></li>
+        <li><a href="Raven.html">Raven</a></li>
+        <li><a href="Seomoz.html">SEOmoz</a></li>
+        <li><a href="Twitter.html">Twitter</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#Architecture"> Other <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <li><a href="GoogleScraper.html">Google Scraper</a></li>
+        <li><a href="OnPage.html">On-page Analysis</a></li>
+        <li><a href="Redirection.html">Redirection</a></li>
+        <li><a href="Utils.html">Utilities</a></li>
+        <li><a href="ArrayTransform.html">Arrays and cells</a></li>
+        <li><a href="Hashes.html">Hash Calculations</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</div><!--/.nav-collapse -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="seerjs-docs">
+        <div class="page-header">
+          <h1>On-page Analysis Tools</h1>
+        </div>
+
+        <div class="row">
+          
+                <div class="span4">
+                  <h2>
+                    <a href="#getOnPageBodyText">getOnPageBodyText</a>
+                  </h2>
+                  <p>Gets the content's text without HTML that is inside the body tag.</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getOnPageBodyWordCount">getOnPageBodyWordCount</a>
+                  </h2>
+                  <p>Counts the number of words that are inside the HTML body</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getOnPageContent">getOnPageContent</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+        </div>
+
+        
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getOnPageBodyText">
+
+  <div class="page-header">
+    <h1 id="getOnPageBodyText">
+      getOnPageBodyText
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getOnPageBodyText(url)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">URL to get text from</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Text thats in the body tag</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">Cells:
+  A1: http://www.seerinteractive.com
+=getOnPageBodyText(A1)
+
+// Directly using a parameter instead of cell
+=getOnPageBodyText("http://www.seerinteractive.com")</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getOnPageBodyWordCount">
+
+  <div class="page-header">
+    <h1 id="getOnPageBodyWordCount">
+      getOnPageBodyWordCount
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getOnPageBodyWordCount(url)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">URL that you want to get a word count from</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Number of words in the body</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">Cells:
+A1: http://www.seerinteractive.com
+=getOnPageBodyWordCount(A1)
+
+// Without using a cell
+=getOnPageBodyWordCount("http://www.seerinteractive.com")</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getOnPageContent">
+
+  <div class="page-header">
+    <h1 id="getOnPageContent">
+      getOnPageContent
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getOnPageContent(url)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Gets the HTML content from a URL and puts the whole thing in a cell. </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">URL to get content from</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>HTML content</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">Cells:
+  A1: http://www.seerinteractive.com
+=getHttpContent(A1)
+
+// Directly using a parameter instead of cell
+=getHttpContent("http://www.seerinteractive.com")</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+<!--         <footer class="footer">
+          <div class="row">
+            <div class="span12 columns">
+              <p>Built <a href="http://www.seerinteractive.com" target="_blank">@seerinteractive</a> by <a href="http://twitter.com/djchrisle" target="_blank">@djchrisle</a>.</p>
+            </div>
+          </div>
+        </footer>
+ -->
+      </div>
+
+    
+
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Namespace: Utils</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/seerjs.css" rel="stylesheet">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+  </head>
+
+  <body onload="prettyPrint()">
+
+    
+
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="index.html">Seer SEO Toolbox</a>
+            <div class="nav-collapse">
+  <ul class="nav">
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#apis"> APIs <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <!-- <li><a href="#">Google Adwords</a></li> -->
+        <li><a href="GoogleAnalytics.html">Google Analytics</a></li>
+        <li><a href="Klout.html">Klout</a></li>
+        <li><a href="Majestic.html">Majestic</a></li>
+        <li><a href="Raven.html">Raven</a></li>
+        <li><a href="Seomoz.html">SEOmoz</a></li>
+        <li><a href="Twitter.html">Twitter</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#Architecture"> Other <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <li><a href="GoogleScraper.html">Google Scraper</a></li>
+        <li><a href="OnPage.html">On-page Analysis</a></li>
+        <li><a href="Redirection.html">Redirection</a></li>
+        <li><a href="Utils.html">Utilities</a></li>
+        <li><a href="ArrayTransform.html">Arrays and cells</a></li>
+        <li><a href="Hashes.html">Hash Calculations</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</div><!--/.nav-collapse -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="seerjs-docs">
+        <div class="page-header">
+          <h1>Utilities</h1>
+        </div>
+
+        <div class="row">
+          
+                <div class="span4">
+                  <h2>
+                    <a href="#dateToYMD">dateToYMD</a>
+                  </h2>
+                  <p>Returns a date as a string in YYYY-MM-DD format. <p>
+
+Given a date from a spreadsheet cell, returns the date in international date
+format (aka unix format). Used for APIs that require dates in unix format. <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getDomainName">getDomainName</a>
+                  </h2>
+                  <p>Extracts the domain from one or many URLs</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getMonday">getMonday</a>
+                  </h2>
+                  <p>Returns the first day of the week.  Useful for formatting headers.</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#hashToParam">hashToParam</a>
+                  </h2>
+                  <p>Converts a hash to a query parameter</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#isArray">isArray</a>
+                  </h2>
+                  <p>Returns true if <code>obj</code> is an array.</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#isColumn">isColumn</a>
+                  </h2>
+                  <p>Returns true if the array is actually in columns</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#isInFuture">isInFuture</a>
+                  </h2>
+                  <p>Determines if some date is in the future.</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#jsonifyCol">jsonifyCol</a>
+                  </h2>
+                  <p>Convert an array into a JSON string</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#jsonStringify">jsonStringify</a>
+                  </h2>
+                  <p>Converts an object to a JSON string</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#parseUrl">parseUrl</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#percentDiff">percentDiff</a>
+                  </h2>
+                  <p>Returns the percentage difference between two numbers.</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#rangeToUrlString">rangeToUrlString</a>
+                  </h2>
+                  <p>Returns a comma separated string from a range of cells.  Each one will
+be encoded so it can safely be used in a URL.</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#ratioUp">ratioUp</a>
+                  </h2>
+                  <p>Returns a ratio of two numbers and rounds it up to decimal places as a
+percentage.</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#stripUrlScheme">stripUrlScheme</a>
+                  </h2>
+                  <p>Removes HTTP or HTTPS from the beginning of one or more URLs</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#strToArray">strToArray</a>
+                  </h2>
+                  <p>Converts one string into an array if it's a string</p>
+                </div>
+                
+        </div>
+
+        
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="dateToYMD">
+
+  <div class="page-header">
+    <h1 id="dateToYMD">
+      dateToYMD
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=dateToYMD(d)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>d</code></td>
+            
+            
+            <td class="type">
+            date
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Date from the spreadsheet</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>String of the date in YYYY-MM-DD format</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Converts date to YYYY-MM-DD<br/>
+    <small>Converts a date to unix time format (YYYY-MM-DD)</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">Cells:
+  A1: 11/01/2011
+=dateToYMD(A1)
+// Returns 2011-11-01</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getDomainName">
+
+  <div class="page-header">
+    <h1 id="getDomainName">
+      getDomainName
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getDomainName(urlRange)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>urlRange</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">URL</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Domain name as a string.</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Get the domain name<br/>
+    <small>Extracts the domain name from any URL</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">// Returns "domain.com"
+=getDomainName("http://www.domain.com/blog")</pre> </p>
+  </div>
+
+
+
+  <div class="span3">
+    <p>
+  <h4>Get the domain name from a range<br/>
+    <small>Extracts the domain names from a range of cells</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">=getDomainName(A1:A10)</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getMonday">
+
+  <div class="page-header">
+    <h1 id="getMonday">
+      getMonday
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getMonday(d)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>d</code></td>
+            
+            
+            <td class="type">
+            date
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Any date you want to find the start of the week for</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Date that is Monday (the start of the week)</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Returns the beginning of the week<br/>
+    <small>Returns the beginning of the week</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">Cells:
+   A1: 11/18/2011
+=getMonday(A1)
+// Nov 18th is a Friday.  This will return 11/14/2011 which is Monday.</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="hashToParam">
+
+  <div class="page-header">
+    <h1 id="hashToParam">
+      hashToParam
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=hashToParam(hashes)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>hashes</code></td>
+            
+            
+            <td class="type">
+            hash
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Hash</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Negative change gives you a negative number <br/>
+    <small>Returns the percentage difference between two numbers</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">var queryString = hashToParam({
+   "key"     : "1234abcd5678",
+   "param"   : "value",
+   "param2"  : "value2"
+}); // => "key=1234abcd5678&param=value&param2=value2"</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="isArray">
+
+  <div class="page-header">
+    <h1 id="isArray">
+      isArray
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=isArray(obj)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            obj
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Some object</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Returns true if the object is an array</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">isArray([1, 2, 3]); // => true
+isArray("hello world"); // => false</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="isColumn">
+
+  <div class="page-header">
+    <h1 id="isColumn">
+      isColumn
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=isColumn()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">// myArray is A1:A3
+isColumn(myArray); // => true
+// myArray is A1:C1
+isColumn(myArray); // => false
+// myArray is A1
+isColumn(myArray); // => false</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="isInFuture">
+
+  <div class="page-header">
+    <h1 id="isInFuture">
+      isInFuture
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=isInFuture(date)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+            
+            <td class="type">
+            date
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The starting date</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>True if the date is in the future, false if it's not.</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Check if date is in the future<br/>
+    <small>Returns true if the date is > today</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">  A1: 11/01/2020
+=isInFuture(A1) // true</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="jsonifyCol">
+
+  <div class="page-header">
+    <h1 id="jsonifyCol">
+      jsonifyCol
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=jsonifyCol(inArray)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>inArray</code></td>
+            
+            
+            <td class="type">
+            array
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Range of cells</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>JSON string of the first column in an array</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Array to JSON<br/>
+    <small>Returns a JSON string of the array that was passed in.</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">var myArray = [[1, 2], [3, 4]];
+jsonifyCol(myArray); // => '[1, 3]'
+jsonifyCol("string"); // => '["string"]';</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="jsonStringify">
+
+  <div class="page-header">
+    <h1 id="jsonStringify">
+      jsonStringify
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=jsonStringify(obj)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Credit: <a href="https://gist.github.com/754454 ">https://gist.github.com/754454 </a> </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            object
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Object you want to make in to a JSON string</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>JSON string</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="parseUrl">
+
+  <div class="page-header">
+    <h1 id="parseUrl">
+      parseUrl
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=parseUrl(URL)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Separates a URL into seperate pieces (such as the domain name, the path,
+  or the query string)
+  <h3>Columns returned</h3>
+  <ul>
+    <li>url: <code>http://www.ora.com:80/goodparts?q#fragment</code></li>
+    <li>scheme: <code>http</code></li>
+    <li>slash: <code>//</code></li>
+    <li>host: <code>www.ora.com</code></li>
+    <li>port: <code>80</code></li>
+    <li>path: <code>goodparts</code></li>
+    <li>query: <code>q</code></li>
+    <li>hash: <code>fragment</code></li>
+  </ul>
+  Credit: <a href="http://www.coderholic.com/javascript-the-good-parts/">
+  JavaScript: The Good Parts</a> </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>URL</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Url to parse</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">=parseUrl("http://www.ora.com:80/goodparts?q#fragment");</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="percentDiff">
+
+  <div class="page-header">
+    <h1 id="percentDiff">
+      percentDiff
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=percentDiff(oldNumber, newNumber)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>oldNumber</code></td>
+            
+            
+            <td class="type">
+            number
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Old number</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>newNumber</code></td>
+            
+            
+            <td class="type">
+            number
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">New number</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Percentage difference from the old number to the new one.</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Positive change gives you a positive number <br/>
+    <small>Returns the percentage difference between two numbers</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">//
+// A1: Yesterday's Visits
+// A2: 100
+// B1: Today's Visits
+// B2: 200
+// C1: Percentage difference:
+// C2:
+   =percentDiff(A2, B2) // 100%</pre> </p>
+  </div>
+
+
+
+  <div class="span3">
+    <p>
+  <h4>Negative change gives you a negative number <br/>
+    <small>Returns the percentage difference between two numbers</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">// A1: Yesterday's Visits
+// A2: 100
+// B1: Today's Visits
+// B2: 75
+// C1: Percentage difference:
+// C2:
+   =percentDiff(A2, B2) // -25%</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="rangeToUrlString">
+
+  <div class="page-header">
+    <h1 id="rangeToUrlString">
+      rangeToUrlString
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=rangeToUrlString(range)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>range</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">A range of cells</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Query string</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Convert to URL string<br/>
+    <small>Turns an array or range into a comma delimited query string</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">Cells:
+   A1: domain.com
+   A2: domain.com/blog
+=rangeToUrlString(A1:A2)
+// => "domain.com,domain.com%2Fblog"</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="ratioUp">
+
+  <div class="page-header">
+    <h1 id="ratioUp">
+      ratioUp
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=ratioUp(numerator, denominator, decimalPlaces)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>numerator</code></td>
+            
+            
+            <td class="type">
+            number
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Numerator</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>denominator</code></td>
+            
+            
+            <td class="type">
+            number
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Denominator</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>decimalPlaces</code></td>
+            
+            
+            <td class="type">
+            integer
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Number of decimal places</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Returns the ratio of two numbers as a percentage<br/>
+    <small>Returns the beginning of the week</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">=ratioUp(8, 43, 2)
+// Returns 0.19</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="stripUrlScheme">
+
+  <div class="page-header">
+    <h1 id="stripUrlScheme">
+      stripUrlScheme
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=stripUrlScheme(url)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">URL</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>URL string without the protocol</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>From a range of URLs<br/>
+    <small>Removes HTTP/HTTP from a range of URLs</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">A1: http://www.domain.com
+A2: https://www.anotherdomain.com
+B1: =stripUrlScheme(A1:A2)</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="strToArray">
+
+  <div class="page-header">
+    <h1 id="strToArray">
+      strToArray
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=strToArray(obj)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            obj
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Object to convert to array</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Array</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>From a string<br/>
+    <small>Returns a single dimentional array if given a string</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">strToArray("hello world"); // => ["hello world"]</pre> </p>
+  </div>
+
+
+
+  <div class="span3">
+    <p>
+  <h4>From a array<br/>
+    <small>Does nothing if it's already an array</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">strToArray(["an array"]); // => ["an array"]</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+<!--         <footer class="footer">
+          <div class="row">
+            <div class="span12 columns">
+              <p>Built <a href="http://www.seerinteractive.com" target="_blank">@seerinteractive</a> by <a href="http://twitter.com/djchrisle" target="_blank">@djchrisle</a>.</p>
+            </div>
+          </div>
+        </footer>
+ -->
+      </div>
+
+    
+
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

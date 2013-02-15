@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Namespace: ArrayTransform</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/seerjs.css" rel="stylesheet">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+  </head>
+
+  <body onload="prettyPrint()">
+
+    
+
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="index.html">Seer SEO Toolbox</a>
+            <div class="nav-collapse">
+  <ul class="nav">
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#apis"> APIs <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <!-- <li><a href="#">Google Adwords</a></li> -->
+        <li><a href="GoogleAnalytics.html">Google Analytics</a></li>
+        <li><a href="Klout.html">Klout</a></li>
+        <li><a href="Majestic.html">Majestic</a></li>
+        <li><a href="Raven.html">Raven</a></li>
+        <li><a href="Seomoz.html">SEOmoz</a></li>
+        <li><a href="Twitter.html">Twitter</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#Architecture"> Other <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <li><a href="GoogleScraper.html">Google Scraper</a></li>
+        <li><a href="OnPage.html">On-page Analysis</a></li>
+        <li><a href="Redirection.html">Redirection</a></li>
+        <li><a href="Utils.html">Utilities</a></li>
+        <li><a href="ArrayTransform.html">Arrays and cells</a></li>
+        <li><a href="Hashes.html">Hash Calculations</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</div><!--/.nav-collapse -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="seerjs-docs">
+        <div class="page-header">
+          <h1>Array Tools</h1>
+        </div>
+
+        <div class="row">
+          
+                <div class="span4">
+                  <h2>
+                    <a href="#combineRange">combineRange</a>
+                  </h2>
+                  <p>Combines a range of cells as either a column or a row. Useful if you
+need to combine a block of cells into a single row or column.</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#filterColumns">filterColumns</a>
+                  </h2>
+                  <p>Filters incoming data by specifying a header.  Usful if you only need
+a few columns from one of the API functions.</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#removeFirstRow">removeFirstRow</a>
+                  </h2>
+                  <p>Removes the first row. Useful if you get something with a header row
+but you don't need it.</p>
+                </div>
+                
+        </div>
+
+        
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="combineRange">
+
+  <div class="page-header">
+    <h1 id="combineRange">
+      combineRange
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=combineRange(inputRange, optByRows, optAsRow)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>inputRange</code></td>
+            
+            
+            <td class="type">
+            array | range
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Range of cells you want to combine</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optByRows</code></td>
+            
+            
+            <td class="type">
+            optByRows
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(optional) Go left to right (default is up and down)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optAsRow</code></td>
+            
+            
+            <td class="type">
+            optAsRow
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(optional) Output as a row (default is a column)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Turn a bunch of columns into a single column.
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">// Let's say your block of data looks like this:
+// +-----------------------------------------+
+// |      |     A    |     B     |     C     |
+// +-----------------------------------------+
+// |   1  | philly     nyc         dallas
+// |   2  | houston    san fran    miami
+// |   3  | chicago    seattle     austin
+// +------+
+ 
+// Combine the block going up        // Combine the block going 
+// and down as a column.             // left to right as a column. 
+=combineRange(A1:C3)                 =combineRange(A1:C3, true)                  
+//   philly                               philly      
+//   houston                              nyc      
+//   chicago                              dallas      
+//   nyc                                  houston      
+//   san fran                             san fran      
+//   seattle                              miami      
+//   dallas                               chicago    
+//   miami                                seattle    
+//   austin                               austin    
+
+// Combine block going up and down as a row
+=combineRange(A1:C3, false, true)
+// => philly | houston | chicago | nyc | san fran | seattle | dallas | miami | austin
+
+// Combine block going left to right as a row
+=combineRange(A1:C3, true, true)]
+// => philly | nyc | dallas | houston | san fran | miami | chicago | seattle | austin</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="filterColumns">
+
+  <div class="page-header">
+    <h1 id="filterColumns">
+      filterColumns
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=filterColumns(input, filterCols)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+            
+            <td class="type">
+            array | range
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Input array or range of cells.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>filterCols</code></td>
+            
+            
+            <td class="type">
+            array | range
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Columns you want to filter by</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Filter data by columns. Useful if you only need a few columns from
+  an API.<br/>
+    <small>
+      Just get URL, title, mozrank, and page authority, in that order
+      from SEOmoz.
+    </small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">// Headers in the first row
+// ------------------------
+  A1: url
+  B1: title
+  C1: mozrank
+  D1: page authority
+  
+// URLs down column A
+// ------------------
+  A2: www.seerinteractive.com
+  A3: www.seomoz.org
+  A4: www.distilled.net
+
+// filterColumns + getLinkscape + Magic
+// --------------------------------------
+  B2: =filterColumns( getLinkscape(A2:A4, false), B1:D1 )</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="removeFirstRow">
+
+  <div class="page-header">
+    <h1 id="removeFirstRow">
+      removeFirstRow
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=removeFirstRow(input)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+            
+            <td class="type">
+            array | range
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Array to shift</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Remove header row from getLinkscape()<br/>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">=removeFirstRow( getLinkscape(A1) )</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+<!--         <footer class="footer">
+          <div class="row">
+            <div class="span12 columns">
+              <p>Built <a href="http://www.seerinteractive.com" target="_blank">@seerinteractive</a> by <a href="http://twitter.com/djchrisle" target="_blank">@djchrisle</a>.</p>
+            </div>
+          </div>
+        </footer>
+ -->
+      </div>
+
+    
+
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

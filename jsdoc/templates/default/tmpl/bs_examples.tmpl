@@ -1,0 +1,17 @@
+<?js this.forEach(function(example) { ?>
+
+  <div class="span3">
+    <p><?js 
+      if (example.caption) {
+        print(example.caption);
+      } else {
+        print('&nbsp;');
+      }
+    ?></p>
+  </div>
+
+  <div class="span9">
+    <p> <?js print('<pre class="prettyprint">' + example.code + '</pre>'); ?> </p>
+  </div>
+
+<?js }); ?>

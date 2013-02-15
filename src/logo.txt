@@ -1,0 +1,20 @@
+/*
+                                _
+       ________  ___  _____    (_)____
+      / ___/ _ \/ _ \/ ___/   / / ___/
+     (__  )  __/  __/ /  _   / (__  )
+_________/\___/\___/_/  (_)_/ /____/... .. .
+                         /___/
+
+        by: Chris Le - @iamchrisle
+       & Seer Interactive 2011-2013
+          -=[ Version 1.6.4 ]=-
+
+              License: MIT
+
+         Get the FULL source code:
+    https://github.com/chrisle/seer.js
+
+                More info:
+ http://www.seerinteractive.com/seo-toolbox
+*/

@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Global</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/seerjs.css" rel="stylesheet">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+  </head>
+
+  <body onload="prettyPrint()">
+
+    
+
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="index.html">Seer SEO Toolbox</a>
+            <div class="nav-collapse">
+  <ul class="nav">
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#apis"> APIs <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <!-- <li><a href="#">Google Adwords</a></li> -->
+        <li><a href="GoogleAnalytics.html">Google Analytics</a></li>
+        <li><a href="Klout.html">Klout</a></li>
+        <li><a href="Majestic.html">Majestic</a></li>
+        <li><a href="Raven.html">Raven</a></li>
+        <li><a href="Seomoz.html">SEOmoz</a></li>
+        <li><a href="Twitter.html">Twitter</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#Architecture"> Other <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <li><a href="GoogleScraper.html">Google Scraper</a></li>
+        <li><a href="OnPage.html">On-page Analysis</a></li>
+        <li><a href="Redirection.html">Redirection</a></li>
+        <li><a href="Utils.html">Utilities</a></li>
+        <li><a href="ArrayTransform.html">Arrays and cells</a></li>
+        <li><a href="Hashes.html">Hash Calculations</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</div><!--/.nav-collapse -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="seerjs-docs">
+        <div class="page-header">
+          <h1></h1>
+        </div>
+
+        <div class="row">
+          
+                <div class="span4">
+                  <h2>
+                    <a href="#detectUrl">detectUrl</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#fetch">fetch</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#fetchAs">fetchAs</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#fetchBlock">fetchBlock</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#filterColumns">filterColumns</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#get">get</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#get">get</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getJson">getJson</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getXml">getXml</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#htaccessRedirect">htaccessRedirect</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#isDate">isDate</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#isNumeric">isNumeric</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#postJson">postJson</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#postXml">postXml</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#responseHeaders">responseHeaders</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#toQueryString">toQueryString</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+        </div>
+
+        
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="detectUrl">
+
+  <div class="page-header">
+    <h1 id="detectUrl">
+      detectUrl
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=detectUrl()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Detect a URL inside an arbitrary string
+see: http://daringfireball.net/2010/07/improved_regex_for_matching_urls </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="fetch">
+
+  <div class="page-header">
+    <h1 id="fetch">
+      fetch
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=fetch()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Returns the response's HTML </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="fetchAs">
+
+  <div class="page-header">
+    <h1 id="fetchAs">
+      fetchAs
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=fetchAs()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Returns as specified content type
+valid types are: json, xml, html </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="fetchBlock">
+
+  <div class="page-header">
+    <h1 id="fetchBlock">
+      fetchBlock
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=fetchBlock()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Returns content in a block </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">// Return the content with without new lines
+SeerJs.Http.fetchBlock('http://www.domain.com', function(content) {
+  return content.replace(/\n|\r/g, '');
+});</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="filterColumns">
+
+  <div class="page-header">
+    <h1 id="filterColumns">
+      filterColumns
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=filterColumns()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> filters by column </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="get">
+
+  <div class="page-header">
+    <h1 id="get">
+      get
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=get(settingName)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Returns setting names need to be in column A and the setting value needs to
+be in column B. </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>settingName</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Name of the setting you want to return</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>The setting or false if not found.</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="get">
+
+  <div class="page-header">
+    <h1 id="get">
+      get
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=get(kw)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Returns Google SERPs for a given keyword </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>kw</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Keyword</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getJson">
+
+  <div class="page-header">
+    <h1 id="getJson">
+      getJson
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getJson(uri, optParams, optOauthCfg)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> GETs URL with query parameters and parses JSON </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>uri</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The URI you want to get</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optParams</code></td>
+            
+            
+            <td class="type">
+            hash
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(optional) Hash of parameters to pass</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optOauthCfg</code></td>
+            
+            
+            <td class="type">
+            hash
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(optional) Hash of OAuth configuration</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>A Utilities.jsonParse object</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getXml">
+
+  <div class="page-header">
+    <h1 id="getXml">
+      getXml
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getXml(uri, optParams)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Fetches URL with query parameters and parses XML </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>uri</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The URI you want to get</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optParams</code></td>
+            
+            
+            <td class="type">
+            hash
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(optional) Hash of parameters to pass</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>A XMLElement object</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="htaccessRedirect">
+
+  <div class="page-header">
+    <h1 id="htaccessRedirect">
+      htaccessRedirect
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=htaccessRedirect()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Generates an .htaccess 301 redirect directive </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="isDate">
+
+  <div class="page-header">
+    <h1 id="isDate">
+      isDate
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=isDate()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Returns true if obj is a date </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="isNumeric">
+
+  <div class="page-header">
+    <h1 id="isNumeric">
+      isNumeric
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=isNumeric(obj)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Returns true if the object is numeric. </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            object
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Object you want to check</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>True if obj is numeric, false if it's not.</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="postJson">
+
+  <div class="page-header">
+    <h1 id="postJson">
+      postJson
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=postJson(uri, payload, optParams)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> POSTs URL with query parameters and payload and parses XML </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>uri</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The URI you want to get</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>payload</code></td>
+            
+            
+            <td class="type">
+            hash
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Payload to place in the body</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optParams</code></td>
+            
+            
+            <td class="type">
+            hash
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(optional) Hash of parameters to pass</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>A Utilities.jsonParse object</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="postXml">
+
+  <div class="page-header">
+    <h1 id="postXml">
+      postXml
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=postXml(uri, optParams)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Fetches URL with query parameters and payload and parses XML </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>uri</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The URI you want to get</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optParams</code></td>
+            
+            
+            <td class="type">
+            hash
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(optional) Hash of parameters to pass</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>A XMLElement object</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="responseHeaders">
+
+  <div class="page-header">
+    <h1 id="responseHeaders">
+      responseHeaders
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=responseHeaders()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Get all headers
+Undocumented feature?
+see: http://code.google.com/p/google-apps-script-issues/issues/detail?id=559 </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="toQueryString">
+
+  <div class="page-header">
+    <h1 id="toQueryString">
+      toQueryString
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=toQueryString()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Returns a query string from an object </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+<!--         <footer class="footer">
+          <div class="row">
+            <div class="span12 columns">
+              <p>Built <a href="http://www.seerinteractive.com" target="_blank">@seerinteractive</a> by <a href="http://twitter.com/djchrisle" target="_blank">@djchrisle</a>.</p>
+            </div>
+          </div>
+        </footer>
+ -->
+      </div>
+
+    
+
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Namespace: Twitter</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/seerjs.css" rel="stylesheet">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+  </head>
+
+  <body onload="prettyPrint()">
+
+    
+
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="index.html">Seer SEO Toolbox</a>
+            <div class="nav-collapse">
+  <ul class="nav">
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#apis"> APIs <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <!-- <li><a href="#">Google Adwords</a></li> -->
+        <li><a href="GoogleAnalytics.html">Google Analytics</a></li>
+        <li><a href="Klout.html">Klout</a></li>
+        <li><a href="Majestic.html">Majestic</a></li>
+        <li><a href="Raven.html">Raven</a></li>
+        <li><a href="Seomoz.html">SEOmoz</a></li>
+        <li><a href="Twitter.html">Twitter</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#Architecture"> Other <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <li><a href="GoogleScraper.html">Google Scraper</a></li>
+        <li><a href="OnPage.html">On-page Analysis</a></li>
+        <li><a href="Redirection.html">Redirection</a></li>
+        <li><a href="Utils.html">Utilities</a></li>
+        <li><a href="ArrayTransform.html">Arrays and cells</a></li>
+        <li><a href="Hashes.html">Hash Calculations</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</div><!--/.nav-collapse -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="seerjs-docs">
+        <div class="page-header">
+          <h1>Twitter API
+                <small>(Documentation redesign in progress)</small></h1>
+        </div>
+
+        <div class="row">
+          
+                <div class="span4">
+                  <h2>
+                    <a href="#getTwitterSearch">getTwitterSearch</a>
+                  </h2>
+                  <p>Returns Tweets from a search term. This function only supports returning 
+both popular and realtime results and a maximum of 100 tweets.</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getTwitterUserLookup">getTwitterUserLookup</a>
+                  </h2>
+                  <p></p>
+                </div>
+                
+        </div>
+
+        
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getTwitterSearch">
+
+  <div class="page-header">
+    <h1 id="getTwitterSearch">
+      getTwitterSearch
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getTwitterSearch(serarchTerm, optResults, optCols)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> <div class="row"><div class="span6">
+  <h3>Columns returned</h3>
+  <table class="table table-striped table-bordered table-condensed">
+    <thead><tr><th>Column</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>id</code></td><td>Tweet's ID number</td></tr>
+      <tr><td><code>id_str</code></td><td>Tweet's ID number</td></tr>
+      <tr><td><code>to_user_id</code></td><td>To user name</td></tr>
+      <tr><td><code>from_user_name</code></td><td>From full name</td></tr>
+      <tr><td><code>from_user_id_str</code></td><td>From user ID</td></tr>
+      <tr><td><code>created_at</code></td><td>Date Tweeted</td></tr>
+      <tr><td><code>profile_image_url_https</code></td><td>Profile image</td></tr>
+      <tr><td><code>from_user_id</code></td><td>User ID</td></tr>
+      <tr><td><code>profile_image_url</code></td><td>Profile image URL</td></tr>
+      <tr><td><code>geo</code></td><td>Tweet's geo location</td></tr>
+      <tr><td><code>source</code></td><td>Service/device used to make the Tweet</td></tr>
+      <tr><td><code>to_user</code></td><td>To Twitter name</td></tr>
+      <tr><td><code>text</code></td><td>Content of the Tweet</td></tr>
+      <tr><td><code>from_user</code></td><td>Twitter user name</td></tr>
+      <tr><td><code>iso_language_code</code></td><td>Language code</td></tr>
+      <tr><td><code>to_user_id_str</code></td><td>To user ID</td></tr>
+      <tr><td><code>to_user_name</code></td><td>To full user name</td></tr>
+    </tbody>
+  </table>
+</div></div>
+
+<div class="row">
+  <div class="span9">
+    <h3>SearchTerm options</h3>
+    <table class="table table-striped table-bordered table-condensed">
+      <thead><tr><th>Example</th><th>Find tweets ...</th></tr></thead>
+      <tbody>
+        <tr><td><code>twitter search</code></td><td>containing both "twitter" and "search". This is the default operator</td></tr>
+        <tr><td><code>"happy hour"</code></td><td>containing the exact phrase "happy hour"</td></tr>
+        <tr><td><code>love OR hate</code></td><td>containing either "love" or "hate" (or both)</td></tr>
+        <tr><td><code>beer -root</code></td><td>containing "beer" but not "root"</td></tr>
+        <tr><td><code>#haiku</code></td><td>containing the hashtag "haiku"</td></tr>
+        <tr><td><code>from:twitterapi</code></td><td>sent from the user @twitterapi</td></tr>
+        <tr><td><code>to:twitterapi</code></td><td>sent to the user @twitterapi</td></tr>
+        <tr><td><code>place:opentable:2</code></td><td>about the place with OpenTable ID 2</td></tr>
+        <tr><td><code>place:247f43d441defc03</code></td><td>about the place with Twitter ID 247f43d441defc03</td></tr>
+        <tr><td><code>@twitterapi</code></td><td>mentioning @twitterapi</td></tr>
+        <tr><td><code>superhero since:2011-05-09</code></td><td>containing "superhero" and sent since date "2011-05-09" (year-month-day).</td></tr>
+        <tr><td><code>twitterapi until:2011-05-09</code></td><td>containing "twitterapi" and sent before the date "2011-05-09".</td></tr>
+        <tr><td><code>movie -scary :)</code></td><td>containing "movie", but not "scary", and with a positive attitude.</td></tr>
+        <tr><td><code>flight :(</code></td><td>containing "flight" and with a negative attitude.</td></tr>
+        <tr><td><code>traffic ?</code></td><td>containing "traffic" and asking a question.</td></tr>
+        <tr><td><code>hilarious filter:links</code></td><td>containing "hilarious" and with a URL.</td></tr>
+        <tr><td><code>news source:tweet_button</code></td><td>containing "news" and entered via the Tweet Button</td></tr>
+        <tr><td colspan="2">
+          <h5>Tips:</h5>
+          <ul>
+            <li>You cannot use a negation (the '-' minus sign)</li>
+            <li>Dates must be in YYYY-MM-DD format.  Hint: Try using the =dateToYMD() function</li>
+            <li>Dates in Twitter are always UTC timezone</li>
+            <li>The start date can't be later than the end date</li>
+            <li>To have multi word searches, use an underscore instead of a space</li>
+          </ul>
+        </td></tr>
+      </tbody>
+    </table>
+  </div>
+</div> </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>serarchTerm</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Search term</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optResults</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(Optional) Number of tweets to return 
+                (default is 25. Max is 100).</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optCols</code></td>
+            
+            
+            <td class="type">
+            array | range
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(Optional) Columns you want to get back 
+                     from Twitter.  Default columns: "created_at", 
+                     "from_user", "to_user", "text"</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Twitter results</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">Cells:
+A1: @wilreynolds
+=getTwitterSearch(A1)      // Last 25 tweets containing "@wilreynolds"
+=getTwitterSearch(A1, 50)  // Last 50 tweets containing "@wilreynolds"
+
+// Get the date of the tweet, the tweet itself, and the 
+// service or device they used to make the tweet.
+A1: created_at
+B1: text
+C1: source
+A2: =getTwitterSearch("#fml", 25, A1:C1)
+
+// Get tweets sent to @djchrisle
+=getTwitterSearch("to:djchrisle")
+
+// Get tweets sent from @djchrisle
+=getTwitterSearch("from:djchrisle")
+
+// Get tweet containing the word "pinterest" and "seo"
+=getTwitterSearch("pinterest_seo")
+
+// Get tweet containing the word "pinterest" and "seo" 
+// since Jan 15, 2012
+=getTwitterSearch("pinterest_seo since:2012-01-15")
+
+// Get tweet containing the word "pinterest" and "seo" 
+// since Jan 15, 2012 but using a date in cell
+Cells:
+A1: 01/15/2012
+=getTwitterSearch("pinterest_seo since:" & dateToYMD(A1))
+
+// Get tweet containing the word "pinterest" and "seo" 
+// since Jan 15, 2012 but using a date in cell and terms from cells
+Cells:
+A1: 01/15/2012
+A2: pinterest
+A3: seo
+=getTwitterSearch(cellsToTwitterSearch(A2:A3) & "since:" & dateToYMD(A1))</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getTwitterUserLookup">
+
+  <div class="page-header">
+    <h1 id="getTwitterUserLookup">
+      getTwitterUserLookup
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getTwitterUserLookup(screenNamesRange, optCols)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Returns information about one or more Twitter accounts<p>
+<b>Limits</b>
+<li>The maximum range is 100 twitter accounts.</li>
+<li>Twitter's API limits you up to 150 calls per hour</li>
+ 
+<p><b>Available columns</b>
+<p><i>(Default columns returned by this function are marked with a (*)</i><p>
+
+<li>name</li>
+<li>profile_sidebar_border_color</li>
+<li>profile_background_tile</li>
+<li>profile_sidebar_fill_color</li>
+<li>location (*)</li>
+<li>profile_image_url</li>
+<li>created_at (*)</li>
+<li>profile_link_color</li>
+<li>favourites_count (*)</li>
+<li>url (*)</li>
+<li>contributors_enabled</li>
+<li>utc_offset</li>
+<li>id (*)</li>
+<li>profile_use_background_image</li>
+<li>profile_text_color</li>
+<li>protected</li>
+<li>followers_count (*)</li>
+<li>lang (*)</li>
+<li>verified (*)</li>
+<li>profile_background_color</li>
+<li>geo_enabled (*)</li>
+<li>notifications</li>
+<li>description (*)</li>
+<li>time_zone (*)</li>
+<li>friends_count (*)</li>
+<li>statuses_count (*)</li>
+<li>profile_background_image_url</li> </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>screenNamesRange</code></td>
+            
+            
+            <td class="type">
+            array | cells
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Cells of of twitter accounts to search</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optCols</code></td>
+            
+            
+            <td class="type">
+            array | cells
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Columns you want returned from Twitter</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Twitter results</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">Cells:
+  A1: djchrisle
+  A2: wilreynolds
+  A3: seerinteractive
+
+// Get default columns about the following Twitter users 
+=getTwitterUserLookup(A2:A3)</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+<!--         <footer class="footer">
+          <div class="row">
+            <div class="span12 columns">
+              <p>Built <a href="http://www.seerinteractive.com" target="_blank">@seerinteractive</a> by <a href="http://twitter.com/djchrisle" target="_blank">@djchrisle</a>.</p>
+            </div>
+          </div>
+        </footer>
+ -->
+      </div>
+
+    
+
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

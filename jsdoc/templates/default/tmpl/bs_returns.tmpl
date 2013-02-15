@@ -1,0 +1,20 @@
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?js 
+		this.forEach(function(r) { 
+			if (r.description) {
+				var descArray = r.description.split(':');
+				?><tr>
+					<td><code><?js= descArray[0] ?></code></td>
+					<td><?js= descArray[1] ?></td>
+				</tr><?js
+			} 
+		});?>
+	</tbody>
+</table>

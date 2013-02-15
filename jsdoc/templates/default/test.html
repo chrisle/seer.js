@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SEO Toolbox, from Seer Interactive</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Seer SEO Toolbox</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li class="dropdown" id="documentation">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#functions">
+                  Function List <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Google Analytics</a></li>
+                  <li><a href="#">Google Adwords</a></li>
+                  <li><a href="#">Klout</a></li>
+                  <li><a href="#">Majestic</a></li>
+                  <li><a href="#">Raven</a></li>
+                  <li><a href="#">SEOmoz</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">On-page Tools</a></li>
+                  <li><a href="#">SEO Tools</a></li>
+                </ul>
+              </li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="page-header">
+        <h1>Majestic SEO <small>api/majestic.js</small></h1>
+      </div>
+
+      <div class="row">
+      
+        <div class="span3 columns">
+          <p>Gets data from majestic</p>
+          <ul class="nav nav-list">
+            <li class="nav-header">Functions</li>
+            <li class="active"><a href="#">getMajesticBackLinks</a></li>
+            <li><a href="#">getMajesticDomainInfo</a></li>
+            <li><a href="#">getMajesticIndexItemInfo</a></li>
+            <li><a href="#">getMajesticMaxBacklinksShown</a></li>
+            <li><a href="#">getMajesticRootDomain</a></li>
+            <li><a href="#">getMajesticSubdomainData</a></li>
+            <li><a href="#">getMajesticSubscriptionInfo</a></li>
+          </ul>
+        </div>
+
+        <div class="span9 columns">
+          <hr>
+          <h2>getMajesticBackLinks <small>(url, source)</h2>
+          <p>Gets Majestic SEO backlinks metrics</p>
+          
+          <h3>Examples</h3> 
+          <blockquote>
+            <p>Get the most recent majestic backlinks.</p>
+            <p><code> =getMajesticBacklinks("www.seerinteractive.com, "fresh");</code></p>
+          </blockquote>
+
+          <blockquote>
+            <p>Get the most recent majestic backlinks.</p>
+            <p><code> =getMajesticBacklinks("www.seerinteractive.com, "fresh");</code></p>
+          </blockquote>
+
+          <h3>Returned columns</h3>
+          <table class="table ">
+            <thead>
+              <tr>
+                <th style="width: 100px;">Column</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>Domain</code>                </td><td> Root domain of the backlink </td></tr>
+              <tr><td><code>AlexaRank</code>             </td><td> Alexa Rank of the root domain (only valid for top 1 mln domains), see more for details <a href="http://www.alexa.com/help/traffic-learn-more">http://www.alexa.com/help/traffic-learn-more</a> </td></tr>
+              <tr><td><code>RefDomains</code>            </td><td> Number of referring domains pointing to that root domain </td></tr>
+              <tr><td><code>ExtBackLinks</code>          </td><td> Number of external backlinks pointing to the root domain </td></tr>
+              <tr><td><code>IndexedURLs</code>           </td><td> Number of unique URLs in index (includes crawled and uncrawled) </td></tr>
+              <tr><td><code>CrawledURLs</code>           </td><td> Number of unique URLs that were crawled </td></tr>
+              <tr><td><code>FirstCrawled</code>          </td><td> Date when domain was first crawled </td></tr>
+              <tr><td><code>LastSuccessfulCrawl</code>   </td><td> Date when domain was last successfully crawled </td></tr>
+              <tr><td><code>IP</code>                    </td><td> IPv4 Address of the domain (note  for hosts with multiple IPs only one IP will be taken) </td></tr>
+              <tr><td><code>SubNet</code>                </td><td> Calculated from IP </td></tr>
+              <tr><td><code>CountryCode</code>           </td><td> Geo-located country of hosting based on IP address </td></tr>
+              <tr><td><code>TLD</code>                   </td><td> Top level domain of the root domain </td></tr>
+              <tr><td><code>DomainID</code>              </td><td> The domainID numbers will correspond with the ID numbers found from =getMajesticDomainInfo </td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>

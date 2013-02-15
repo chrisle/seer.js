@@ -1,0 +1,52 @@
+<section id="<?js= id ?>">
+
+  <div class="page-header">
+    <h1 id="<?js= id ?>">
+      <?js= name?>
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=<?js= name + this.signature ?></pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      <?js if (this.description) { ?>
+        <h3>Details</h3> 
+        <p> <?js= this.description ?> </p>
+      <?js } ?>
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        <?js
+          if (this.params && params.length) {
+            print( render('bs_params.tmpl', params) );
+          }
+        ?>        
+      </p>
+
+      <?js if (this.returns && returns.length) { ?>
+        <h3>Returns</h3>
+        <p><?js print( render('bs_returns.tmpl', returns) ); ?></p>
+      <?js } ?>
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      <?js
+        if (this.examples && examples.length) {
+          print( render('bs_examples.tmpl', examples) );
+        }
+      ?>
+  </div> 
+</section>

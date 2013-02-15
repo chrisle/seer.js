@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Namespace: Majestic</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/seerjs.css" rel="stylesheet">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+  </head>
+
+  <body onload="prettyPrint()">
+
+    
+
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="index.html">Seer SEO Toolbox</a>
+            <div class="nav-collapse">
+  <ul class="nav">
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#apis"> APIs <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <!-- <li><a href="#">Google Adwords</a></li> -->
+        <li><a href="GoogleAnalytics.html">Google Analytics</a></li>
+        <li><a href="Klout.html">Klout</a></li>
+        <li><a href="Majestic.html">Majestic</a></li>
+        <li><a href="Raven.html">Raven</a></li>
+        <li><a href="Seomoz.html">SEOmoz</a></li>
+        <li><a href="Twitter.html">Twitter</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#Architecture"> Other <b class="caret"></b> </a>
+      <ul class="dropdown-menu">
+        <li><a href="GoogleScraper.html">Google Scraper</a></li>
+        <li><a href="OnPage.html">On-page Analysis</a></li>
+        <li><a href="Redirection.html">Redirection</a></li>
+        <li><a href="Utils.html">Utilities</a></li>
+        <li><a href="ArrayTransform.html">Arrays and cells</a></li>
+        <li><a href="Hashes.html">Hash Calculations</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</div><!--/.nav-collapse -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="seerjs-docs">
+        <div class="page-header">
+          <h1>Majestic API</h1>
+        </div>
+
+        <div class="row">
+          
+                <div class="span4">
+                  <h2>
+                    <a href="#getMajesticBackLinks">getMajesticBackLinks</a>
+                  </h2>
+                  <p>Gets a list of backlinks from Majestic SEO</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getMajesticindexItemInfo">getMajesticindexItemInfo</a>
+                  </h2>
+                  <p>Retuns index information about a URL</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getMajesticindexItemInfo">getMajesticindexItemInfo</a>
+                  </h2>
+                  <p>Returns backlinks for a URL</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getMajesticMaxBacklinksShown">getMajesticMaxBacklinksShown</a>
+                  </h2>
+                  <p>Shortcut that gets the max number of backlinks this API key can show</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getMajesticSubdomainData">getMajesticSubdomainData</a>
+                  </h2>
+                  <p>Get information on referring subdomain's backlinks from Majestic SEO.
+For example, if a backlink was "http://www.domain.com/blog.html" then the
+information you will get is just for "www.domain.com"</p>
+                </div>
+                
+                <div class="span4">
+                  <h2>
+                    <a href="#getMajesticSubscriptionInfo">getMajesticSubscriptionInfo</a>
+                  </h2>
+                  <p>Returns information on existing subscriptions with current resource usage
+values provided.</p>
+                </div>
+                
+        </div>
+
+        
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getMajesticBackLinks">
+
+  <div class="page-header">
+    <h1 id="getMajesticBackLinks">
+      getMajesticBackLinks
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getMajesticBackLinks(url, optSource, optLimit)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> Gets a list of backlinks from Majestic SEO. The maximum number of URLs
+  it pulls is set in the Settings sheet. </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">URL to get backlinks for</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optSource</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(optional) Data source to get information from (can be "fresh" or
+       "historic") Default is "fresh"</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optLimit</code></td>
+            
+            
+            <td class="type">
+            integer
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(optional) Override the maximum number of URLs to pull.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Domain                </code></td>
+					<td> Root domain of the backlink</td>
+				</tr><tr>
+					<td><code>AlexaRank             </code></td>
+					<td> Alexa Rank of the root domain (only valid for top 1 mln domains), see more for details {@link http</td>
+				</tr><tr>
+					<td><code>RefDomains            </code></td>
+					<td> Number of referring domains pointing to that root domain</td>
+				</tr><tr>
+					<td><code>ExtBackLinks          </code></td>
+					<td> Number of external backlinks pointing to the root domain</td>
+				</tr><tr>
+					<td><code>IndexedURLs           </code></td>
+					<td> Number of unique URLs in index (includes crawled and uncrawled)</td>
+				</tr><tr>
+					<td><code>CrawledURLs           </code></td>
+					<td> Number of unique URLs that were crawled</td>
+				</tr><tr>
+					<td><code>FirstCrawled          </code></td>
+					<td> Date when domain was first crawled</td>
+				</tr><tr>
+					<td><code>LastSuccessfulCrawl   </code></td>
+					<td> Date when domain was last successfully crawled</td>
+				</tr><tr>
+					<td><code>IP                    </code></td>
+					<td> IPv4 Address of the domain (note  for hosts with multiple IPs only one IP will be taken)</td>
+				</tr><tr>
+					<td><code>SubNet                </code></td>
+					<td> Calculated from IP</td>
+				</tr><tr>
+					<td><code>CountryCode           </code></td>
+					<td> Geo-located country of hosting based on IP address</td>
+				</tr><tr>
+					<td><code>TLD                   </code></td>
+					<td> Top level domain of the root domain</td>
+				</tr><tr>
+					<td><code>DomainID              </code></td>
+					<td> The domainID numbers will correspond with the ID numbers found from =getMajesticDomainInfo</td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Get backlinks for a URL:<br/>
+    <small>Return the backlinks from Majestic for www.seerinteractive.com/blog</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">=getMajesticBacklinks("www.seerinteractive.com/blog")</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getMajesticindexItemInfo">
+
+  <div class="page-header">
+    <h1 id="getMajesticindexItemInfo">
+      getMajesticindexItemInfo
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getMajesticindexItemInfo(urls)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> <p>This function returns key information about "index items." If you give
+it a root domain name (eg: "seerinteractive.com") then you will
+get index information for all URLs belonging to that root domain.</p>
+
+<p>If you give it a subdomain (eg: "www.seerinteractive.com") then you
+will get index information that belong to just that subdomain.</p>
+
+<p>If you give it an exact URL
+(eg: "http://www.seerinteractive.com/blog") then you will get index
+information for only that URL.</p> </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>urls</code></td>
+            
+            
+            <td class="type">
+            array or string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">URL as an array</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Get Majestic index items:<br/>
+    <small>Return majestic index items for a range of URLs</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">Cells:
+   A1: www.seerinteractive.com
+   A2: www.nasty-competitor.com/blog
+   A3: www.another-guy.com
+=getMajesticIndexItemInfo(A1:C3)</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getMajesticindexItemInfo">
+
+  <div class="page-header">
+    <h1 id="getMajesticindexItemInfo">
+      getMajesticindexItemInfo
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getMajesticindexItemInfo(url, datasource, maxSourceUrls, showDomainInfo, getUrlData, getSubDomainData, getRootDomain, maxSourceURLsPerRefDomain)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+        <h3>Details</h3> 
+        <p> This will return backlinks (up to a limit of the subscription level) for
+any URL, domain or subdomain. </p>
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">See: <a href="http://bit.ly/tb91ri">http://bit.ly/tb91ri</a></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>datasource</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">See: <a href="http://bit.ly/tb91ri">http://bit.ly/tb91ri</a></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxSourceUrls</code></td>
+            
+            
+            <td class="type">
+            int
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Defaults to the hard limit setting
+                                       or the max backlinks your account will
+                                       show whichever is lower. Use 0 to
+                                       force the maximum backlinks.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>showDomainInfo</code></td>
+            
+            
+            <td class="type">
+            boolean
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">See: <a href="http://bit.ly/tb91ri">http://bit.ly/tb91ri</a></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>getUrlData</code></td>
+            
+            
+            <td class="type">
+            boolean
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">See: <a href="http://bit.ly/tb91ri">http://bit.ly/tb91ri</a></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>getSubDomainData</code></td>
+            
+            
+            <td class="type">
+            boolean
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">See: <a href="http://bit.ly/tb91ri">http://bit.ly/tb91ri</a></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>getRootDomain</code></td>
+            
+            
+            <td class="type">
+            boolean
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">See: <a href="http://bit.ly/tb91ri">http://bit.ly/tb91ri</a></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxSourceURLsPerRefDomain</code></td>
+            
+            
+            <td class="type">
+            int
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">See: <a href="http://bit.ly/tb91ri">http://bit.ly/tb91ri</a></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Get top backlinks for a URL:<br/>
+    <small>Get the top results up to the BACKLINK_HARD_LIMIT setting</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">=getMajesticTopBackLinks("http://www.seerinteractive.com")</pre> </p>
+  </div>
+
+
+
+  <div class="span3">
+    <p>
+  <h4>Get the top 100 results:<br/>
+    <small>Get the top 100 backlink results</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">=getMajesticTopBackLinks("http://www.seerinteractive.com", 100)</pre> </p>
+  </div>
+
+
+
+  <div class="span3">
+    <p>
+  <h4>Get all the backlinks for a URL:<br/>
+    <small>Get the the maximum resuts. !!WARNING!! Most likely will make Google Docs hang!!</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">=getMajesticTopBackLinks("http://www.seerinteractive.com", 0)</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getMajesticMaxBacklinksShown">
+
+  <div class="page-header">
+    <h1 id="getMajesticMaxBacklinksShown">
+      getMajesticMaxBacklinksShown
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getMajesticMaxBacklinksShown()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">// Check the current limit of the the maximum number of backlinks we're allowed to get.
+=getMajesticMaxBacklinksShown()</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getMajesticSubdomainData">
+
+  <div class="page-header">
+    <h1 id="getMajesticSubdomainData">
+      getMajesticSubdomainData
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getMajesticSubdomainData(url, source, optLimit)</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+        
+
+<table class="table table-bordered">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th>Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">URL to get</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+            
+            <td class="type">
+            string
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Data source to get information from (fresh or historic)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>optLimit</code></td>
+            
+            
+            <td class="type">
+            integer
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(optional) Number of URLs (defaults to the settings sheet)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+      </p>
+
+      
+        <h3>Returns</h3>
+        <p><table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Column</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+					<td><code>Returns domains as an array</code></td>
+					<td></td>
+				</tr>
+	</tbody>
+</table>
+</p>
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>
+  <h4>Get subdomain data for a URL:<br/>
+    <small>Return the subdomain information from Majestic</small>
+  </h4>
+</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">=getMajesticSubDomainData("www.seerinteractive.com", "fresh")</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+              <div class="row">
+                <div class="span12 columns">
+                  <section id="getMajesticSubscriptionInfo">
+
+  <div class="page-header">
+    <h1 id="getMajesticSubscriptionInfo">
+      getMajesticSubscriptionInfo
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="span12 columns">
+      <h3>Function</h3>
+      <pre class="prettyprint">=getMajesticSubscriptionInfo()</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3 columns">
+      
+    </div>
+    <div class="span9 columns">
+      <h3>Parameters</h3>
+      <p>
+                
+      </p>
+
+      
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>Examples</h3>
+  </div>
+     
+  <div class="row">
+      
+
+  <div class="span3">
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="span9">
+    <p> <pre class="prettyprint">=getMajesticSubscriptionInfo()</pre> </p>
+  </div>
+
+
+
+  </div> 
+</section>
+
+                </div>
+              </div>
+
+            
+
+<!--         <footer class="footer">
+          <div class="row">
+            <div class="span12 columns">
+              <p>Built <a href="http://www.seerinteractive.com" target="_blank">@seerinteractive</a> by <a href="http://twitter.com/djchrisle" target="_blank">@djchrisle</a>.</p>
+            </div>
+          </div>
+        </footer>
+ -->
+      </div>
+
+    
+
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
