@@ -2611,8 +2611,8 @@ SeerJs.GaApi = (function() {
         segment = encodeURIComponent(segment);
         URL = URL + "&segment=" + segment;
       }
-      if (sort == true) {
-        URL = URL + "&sort=-" + metrics;
+      if (sort.length > 0) {
+        URL = URL + "&sort=" + sort;
       }
     }
     catch (e) {
@@ -2849,9 +2849,7 @@ SeerJs.GaApi = (function() {
  *        <em class="muted">(Optional)</em> Segment ID
  *        
  * @param {String} optSort             
- *        <em class="muted">(Optional)</em> Sort<br/>
- *        <span class="label label-important">Known Bug</span>
- *        Sorting doesn't work. You have to sort the data yourself.
+ *        <em class="muted">(Optional)</em> Sort
  *        
  * @param {Boolean} optIncludeHeaders   
  *        <em class="muted">(Optional)</em> Include headers (true or false)
